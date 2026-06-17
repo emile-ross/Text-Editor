@@ -63,7 +63,7 @@ void insert(Lista *l, char *comt2, char *comt3) {
 void save(Lista *l, FILE **arq, char *arqname) {
     *arq = freopen(arqname, "w", *arq);
     Node *cur = l->head;
-    while(cur->lin != NULL){
+    while(cur != NULL){
         fputs(cur->lin, *arq);
         fputs("\n", *arq);
         cur = cur->next;
@@ -74,7 +74,7 @@ void save(Lista *l, FILE **arq, char *arqname) {
 void savebin(Lista *l, FILE **arq, char *arqname) {
     *arq = freopen(arqname, "wb", *arq);
     Node *cur = l->head;
-    while(cur->lin != NULL){
+    while(cur != NULL){
         fputs(cur->lin, *arq);
         fputs("\n", *arq);
         cur = cur->next;
